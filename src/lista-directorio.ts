@@ -1,14 +1,24 @@
-import * as fs from 'fs';
+import { readFile } from 'fs';
+import { fileURLToPath } from 'url';
+import { join } from 'path';
 
 
-function leerArchivo(ruta: string): void {
-  fs.readFile(ruta, 'utf8', (error, datos) => {
-    if (error) {
-      console.error('Error al leer el archivo:', error.message);
-      return;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = join(__filename, '..'); 
+
+function imprimirContenidoArchivo(rutaArchivo: string): void {
+
+  const rutaCompleta = join(__dirname, '../src', rutaArchivo); 
+
+  readFile(rutaCompleta, (err, data) => {
+    if (err) {
+      console.error('Hubo un error al leer el archivo:', err.message);
+    } else {
+      console.log('Contenido del archivo:');
+      console.log(data.toString());
     }
-    console.log('Contenido del archivo:\n', datos);
   });
 }
 
-leerArchivo('archivo.txt');
+// Ejemplo de uso:
+imprimirContenidoArchivo('hola.txt');

@@ -1,15 +1,15 @@
 {
-  "name": "lista-directorio",
+  "name": "escribir-fichero ",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node dist/lista-directorio.js",
-    "dev": "tsc-watch --onSuccess \"node dist/lista-directorio.js\"",
+    "start": "node dist/escribir-fichero .js",
+    "dev": "tsc-watch --onSuccess \"node dist/escribir-fichero .js\"",
     "doc": "typedoc",
     "test": "npx vitest run --watch",
     "coverage": "vitest run --coverage --coverage.include **/src/*",
-    "comando": "node dist/lista-directorio.js"
+    "comando": "node dist/escribir-fichero .js"
   },
   "keywords": [],
   "author": "",
