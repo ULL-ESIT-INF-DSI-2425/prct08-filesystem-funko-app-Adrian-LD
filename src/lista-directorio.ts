@@ -20,5 +20,4 @@ function imprimirContenidoArchivo(rutaArchivo: string): void {
   });
 }
 
-// Ejemplo de uso:
 imprimirContenidoArchivo('hola.txt');
